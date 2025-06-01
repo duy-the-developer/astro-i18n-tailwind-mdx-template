@@ -60,7 +60,7 @@ const customI18nMiddleware = defineMiddleware(async (ctx, next) => {
 export const onRequest = sequence(
   customI18nMiddleware,
   i18nMiddleware({
-    redirectToDefaultLocale: false,
+    redirectToDefaultLocale: true,
     prefixDefaultLocale: true,
     fallbackType: 'rewrite',
   }),
