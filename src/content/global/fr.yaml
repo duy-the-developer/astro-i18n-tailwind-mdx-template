@@ -1,0 +1,33 @@
+site:
+  name: Modèle Astro i18n tailwind mdx
+navigation:
+  header:
+    cta:
+      label: Contact
+      href: '#contact-section'
+    links:
+      - label: Accueil
+        href: /
+      - label: Blogue
+        href: blog
+      - label: Apropos
+        href: apropos
+  footer:
+    copyrightLine: 2025 yourcompany.ca.
+    links:
+      - label: Accueil
+        href: /
+      - label: Blogue
+        href: blog
+contactForm:
+  headline: Entrer en contact
+  description: Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.
+  formLabels:
+    fullName: Nom complet
+    email: Courriel
+    phone: Téléphone
+    message: Message
+    cta: Envoyer
+    success: 'Votre message a été envoyé avec succès. Nous vous répondrons dès que possible.'
+    thankYou: 'Merci !'
+    error: 'Oups ! Une erreur s’est produite. Veuillez vérifier vos informations et réessayer. Si c’est une urgence, appelez-nous directement.'

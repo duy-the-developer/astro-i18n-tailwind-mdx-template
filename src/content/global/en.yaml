@@ -1,0 +1,33 @@
+site:
+  name: Astro i18n tailwind mdx template
+navigation:
+  header:
+    cta:
+      label: Contact
+      href: '#contact-section'
+    links:
+      - label: Home
+        href: /
+      - label: Blog
+        href: blog
+      - label: About
+        href: about
+  footer:
+    copyrightLine: 2025 yourcompany.ca.
+    links:
+      - label: Home
+        href: /
+      - label: Blog
+        href: blog
+contactForm:
+  headline: Get in touch
+  description: Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.
+  formLabels:
+    fullName: Full name
+    email: Email
+    phone: Phone
+    message: Message
+    cta: Submit
+    success: "Your message has been sent successfully. We'll get back to you as soon as possible."
+    thankYou: 'Thank you!'
+    error: 'Oops! Something went wrong. Please check your information and try again. If this is an emergency, please call us directly.'

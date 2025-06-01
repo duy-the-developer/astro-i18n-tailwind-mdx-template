@@ -1,0 +1,29 @@
+---
+import RootLayout from '../../layouts/RootLayout.astro'
+import { getCollection, render } from 'astro:content'
+import { ACCEPTED_LOCALES } from '../../config/i18n-config'
+
+export async function getStaticPaths() {
+  const localeRegex = new RegExp(`(${ACCEPTED_LOCALES.join('|')})$`)
+
+  const pages = await getCollection('pages', (page) => {
+    const fileName = page.filePath?.split('/').pop()?.split('.')[0]
+    const baseId = fileName?.replace(localeRegex, '')
+
+    return baseId === 'home'
+  })
+
+  return pages.map((page) => ({
+    params: { locale: page.data.lang },
+    props: { page },
+  }))
+}
+
+const { page } = Astro.props
+
+const { Content } = await render(page)
+---
+
+<RootLayout metadata={page.data}>
+  <Content />
+</RootLayout>

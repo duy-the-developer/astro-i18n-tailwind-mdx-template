@@ -1,0 +1,84 @@
+---
+import '../styles/global.css'
+import { getAbsoluteLocaleUrl, notFound } from 'astro:i18n'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import { getEntry } from 'astro:content'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
+
+const { metadata } = Astro.props
+
+const canonicalLink = getAbsoluteLocaleUrl(metadata.lang, metadata.slug)
+
+const global = await getEntry('global', metadata.lang)
+
+if (!global) return notFound()
+
+const { data: globalData } = global
+---
+
+<!doctype html>
+<html lang={metadata.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Title + Description -->
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description} />
+
+    <!-- Alternate Languages -->
+    <link rel="canonical" href={canonicalLink} />
+
+    <!-- Open Graph  -->
+    <meta property="og:site_name" content={globalData.site.name} />
+    <meta property="og:title" content={metadata.title} />
+    <meta property="og:description" content={metadata.description} />
+    <meta property="og:url" content={canonicalLink} />
+
+    <!-- Twitter -->
+    <meta property="twitter:title" content={metadata.title} />
+    <meta property="twitter:description" content={metadata.description} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
+  <body class="antialiased">
+    <!-- Navigation Header -->
+    <header class="bg-teal-200 flex items-center gap-x-2 px-8 mx-auto">
+      <nav>
+        <ul class="flex items-center gap-x-2">
+          <li>
+            <LanguageSwitcher
+              currentLocale={metadata.lang}
+              languages={metadata.alternates.languages}
+            />
+          </li>
+          {
+            globalData.navigation.header.links.map((link) => {
+              return (
+                <li>
+                  <a
+                    class="underline text-blue-400"
+                    href={getRelativeLocaleUrl(metadata.lang, link.href)}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </nav>
+    </header>
+    <main class="flex flex-col px-8 mx-auto prose">
+      <slot />
+    </main>
+    <!-- Footer -->
+    <footer class="px-8 mx-auto bg-teal-300">
+      <span>Footer</span>
+    </footer>
+  </body>
+</html>
