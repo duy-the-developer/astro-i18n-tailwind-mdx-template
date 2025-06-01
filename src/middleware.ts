@@ -4,7 +4,12 @@ import { middleware as i18nMiddleware } from 'astro:i18n'
 import { ACCEPTED_LOCALES } from './config/i18n-config'
 
 const customI18nMiddleware = defineMiddleware(async (ctx, next) => {
+  const acceptLang = ctx.request.headers.get('accept-language') || ''
+  console.log(ctx.request.headers.get('Accept-Language'))
+  const preferredLang = acceptLang.toLowerCase().startsWith('fr') ? 'fr' : 'en'
   const pathname = ctx.url.pathname
+
+  console.log({ acceptLang, preferredLang })
 
   const routeSegments = pathname.split('/')
   const localePrefix = routeSegments.shift()
@@ -22,8 +27,6 @@ const customI18nMiddleware = defineMiddleware(async (ctx, next) => {
     console.log({ matchedPage })
 
     if (matchedPage) {
-      const acceptLang = ctx.request.headers.get('accept-language') || ''
-      const preferredLang = acceptLang.toLowerCase().startsWith('fr') ? 'fr' : 'en'
       const redirectPath = matchedPage.data.alternates.languages[preferredLang]
 
       if (redirectPath) {

@@ -13,8 +13,6 @@ export async function getStaticPaths() {
     return baseId !== 'home'
   })
 
-  console.dir({ pages }, { depth: null })
-
   return pages.map((page) => ({
     params: { locale: page.data.lang, slug: page.data.slug },
     props: { page },
