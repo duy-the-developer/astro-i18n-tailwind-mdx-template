@@ -54,6 +54,7 @@ const { data: globalData } = global
             <LanguageSwitcher
               currentLocale={metadata.lang}
               languages={metadata.alternates.languages}
+              client:idle
             />
           </li>
           {
