@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "generate:redirects": "tsx ./src/scripts/generate-vercel-redirects.ts",
-    "build": "astro build",
+    "build": "pnpm generate:redirects && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --config .prettierrc --write ."

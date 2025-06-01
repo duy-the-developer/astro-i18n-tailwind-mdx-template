@@ -6,7 +6,17 @@
       "permanent": true
     },
     {
+      "source": "/about",
+      "destination": "/en/about",
+      "permanent": true
+    },
+    {
       "source": "/fr/about",
+      "destination": "/fr/apropos",
+      "permanent": true
+    },
+    {
+      "source": "/apropos",
       "destination": "/fr/apropos",
       "permanent": true
     },
@@ -16,7 +26,17 @@
       "permanent": true
     },
     {
+      "source": "/blog/post-1",
+      "destination": "/en/blog/post-1",
+      "permanent": true
+    },
+    {
       "source": "/fr/blog/post-1",
+      "destination": "/fr/blogue/article-1",
+      "permanent": true
+    },
+    {
+      "source": "/blogue/article-1",
       "destination": "/fr/blogue/article-1",
       "permanent": true
     },
@@ -26,7 +46,27 @@
       "permanent": true
     },
     {
+      "source": "/blog/post-2",
+      "destination": "/en/blog/post-2",
+      "permanent": true
+    },
+    {
+      "source": "/blog/post-2",
+      "destination": "/fr/blog/post-2",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/en/blog",
+      "permanent": true
+    },
+    {
       "source": "/fr/blog",
+      "destination": "/fr/blogue",
+      "permanent": true
+    },
+    {
+      "source": "/blogue",
       "destination": "/fr/blogue",
       "permanent": true
     },

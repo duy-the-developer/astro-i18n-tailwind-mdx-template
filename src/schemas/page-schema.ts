@@ -5,6 +5,7 @@ export const pageSchema = defineCollection({
   loader: glob({
     pattern: '**/*.(md|mdx)',
     base: './src/content/pages',
+    generateId: ({ entry }) => entry.replace(/\.mdx/, ''),
   }),
   schema: z.object({
     title: z.string(),

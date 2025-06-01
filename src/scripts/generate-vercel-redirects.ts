@@ -47,6 +47,12 @@ async function extractRedirectsFromContent(): Promise<Redirect[]> {
 
     if (!slug || !lang || !alternates || typeof alternates !== 'object') continue
 
+    redirects.push({
+      source: `/${slug}`,
+      destination: `/${lang}/${slug}`,
+      permanent: true,
+    })
+
     for (const [locale, destPath] of Object.entries(alternates)) {
       const sourcePath = `/${locale}/${slug}`
       if (sourcePath !== destPath) {
