@@ -11,6 +11,12 @@ import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
+  build: {
+    format: 'directory',
+  },
+
+  trailingSlash: 'ignore',
+
   i18n: {
     locales: ACCEPTED_LOCALES,
     defaultLocale: DEFAULT_LOCALE,

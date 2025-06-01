@@ -9,7 +9,7 @@ navigation:
       - label: Accueil
         href: /
       - label: Blogue
-        href: blog
+        href: blogue
       - label: Apropos
         href: apropos
   footer:
