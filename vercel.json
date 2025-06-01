@@ -17,12 +17,22 @@
     },
     {
       "source": "/fr/blog/post-1",
-      "destination": "/fr/blogue/post-1",
+      "destination": "/fr/blogue/article-1",
       "permanent": true
     },
     {
       "source": "/en/blogue/article-1",
       "destination": "/en/blog/post-1",
+      "permanent": true
+    },
+    {
+      "source": "/fr/blog",
+      "destination": "/fr/blogue",
+      "permanent": true
+    },
+    {
+      "source": "/en/blogue",
+      "destination": "/en/blog",
       "permanent": true
     }
   ]
