@@ -1,47 +1,75 @@
-# Astro Starter Kit: Minimal
+# Astro i18n Tailwind MDX Template
 
-```sh
-pnpm create astro@latest -- --template minimal
+A lean, statically-generated, multilingual site template built with **[Astro](https://astro.build)**, styled with **TailwindCSS**, powered by **MDX**, and enhanced with **React components** via **shadcn/ui**. Optimized for SEO, performance, and a scalable content structure.
+
+## 🌍 Features
+
+- ✅ Full **i18n** setup with localized routes and slugs
+- 🗂️ **Content collections** powered by Astro’s `content/config` API
+- 📝 Editable pages using **MDX**
+- 🌐 **Language switcher** with route awareness
+- 🔀 **Static redirects** for unmatched locales & path mismatches
+- ⚡ 100% **static** (SSG) & deployable to Vercel
+- 💅 Styled with TailwindCSS & `shadcn/ui` components
+- 🔍 SEO-friendly with `hreflang`, canonical URLs, Open Graph tags, and more
+
+---
+
+## 📦 Tech Stack
+
+- [Astro](https://astro.build/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [MDX](https://mdxjs.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Vercel](https://vercel.com/)
+- TypeScript + Zod + YAML for content structure
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/duy-the-developer/astro-i18n-tailwind-mdx-template.git
+cd astro-i18n-tailwind-mdx-template
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+### 2. Install dependencies
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```bash
+pnpm install
+```
 
-## 🚀 Project Structure
+### 3. Run dev server
 
-Inside of your Astro project, you'll see the following folders and files:
+```bash
+pnpm dev
+```
 
-```text
-/
-├── public/
+## Scripts
+
+Generate localized redirects (for Vercel)
+
+```bash
+pnpm run generate:redirects
+```
+
+This scans all MDX files for `slug` and `alternates`, and generates proper `vercel.json` redirects to handle mismatched slugs and locale-less URLs.
+
+## Project Structure
+
+```
+.
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── content/         ← MDX/YAML content
+│   ├── config/          ← i18n config
+│   ├── layouts/         ← Shared layouts
+│   ├── pages/           ← Dynamic routes via [locale] and [...slug]
+│   ├── schemas/         ← Zod schemas for content collections
+│   └── components/      ← UI + LanguageSwitcher
+├── public/              ← Static assets
+├── astro.config.mjs     ← Astro config (i18n enabled)
+├── vercel.json          ← Generated static redirects
+└── tsconfig.json        ← TypeScript config
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
