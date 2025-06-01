@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/en",
+      "permanent": true
+    },
+    {
+      "source": "/fr/about",
+      "destination": "/fr/apropos",
+      "permanent": true
+    },
+    {
+      "source": "/en/apropos",
+      "destination": "/en/about",
+      "permanent": true
+    },
+    {
+      "source": "/fr/blog/post-1",
+      "destination": "/fr/blogue/post-1",
+      "permanent": true
+    },
+    {
+      "source": "/en/blogue/article-1",
+      "destination": "/en/blog/post-1",
+      "permanent": true
+    }
+  ]
+}

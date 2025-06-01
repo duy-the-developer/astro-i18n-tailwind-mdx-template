@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
 import { ACCEPTED_LOCALES, DEFAULT_LOCALE } from './src/config/i18n-config'
+import { remarkLocalizeLinks } from './src/lib/remark-plugins/remark-localized-links'
 
 import tailwindcss from '@tailwindcss/vite'
 
@@ -20,6 +21,7 @@ export default defineConfig({
     },
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
       fallbackType: 'rewrite',
     },
   },
@@ -28,5 +30,10 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [mdx(), react()],
+  integrations: [
+    mdx({
+      remarkPlugins: [remarkLocalizeLinks],
+    }),
+    react(),
+  ],
 })

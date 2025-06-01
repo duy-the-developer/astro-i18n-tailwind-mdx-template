@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "generate:redirects": "tsx ./src/scripts/generate-vercel-redirects.ts",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -26,10 +27,17 @@
     "prettier-plugin-astro": "^0.14.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "remark": "^15.0.1",
     "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.8",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "tw-animate-css": "^1.3.2"
+    "@types/mdast": "^4.0.4",
+    "gray-matter": "^4.0.3",
+    "remark-mdx-frontmatter": "^5.1.0",
+    "tsx": "^4.19.4",
+    "tw-animate-css": "^1.3.2",
+    "vfile": "^6.0.3"
   }
 }
