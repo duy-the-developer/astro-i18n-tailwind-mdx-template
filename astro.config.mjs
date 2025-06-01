@@ -16,6 +16,8 @@ export default defineConfig({
     format: 'directory',
   },
 
+  output: 'server',
+
   trailingSlash: 'ignore',
 
   i18n: {
