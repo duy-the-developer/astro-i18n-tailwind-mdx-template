@@ -8,6 +8,8 @@ import mdx from '@astrojs/mdx'
 
 import react from '@astrojs/react'
 
+import vercel from '@astrojs/vercel'
+
 // https://astro.build/config
 export default defineConfig({
   build: {
@@ -32,4 +34,8 @@ export default defineConfig({
   },
 
   integrations: [mdx(), react()],
+  adapter: vercel({
+    edgeMiddleware: true,
+  }),
 })
+

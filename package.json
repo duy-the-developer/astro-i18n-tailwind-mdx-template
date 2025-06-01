@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/vercel": "^8.1.4",
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-popover": "^1.1.14",
     "@tailwindcss/typography": "^0.5.16",
